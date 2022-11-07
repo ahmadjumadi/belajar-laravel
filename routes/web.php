@@ -17,8 +17,10 @@ use App\Http\Controllers\ToDoController;
 */
 Route::view('/', 'template.master');
 
-Route::get('/akun', [AkunController::class, 'index']);
-Route::get('/akun/create', [AkunController::class, 'create']);
+Route::view('/home', 'adminlte.master');
+
+Route::get('/akun', [AkunController::class, 'index'])->name('indexAkun');
+Route::get('/akun/create', [AkunController::class, 'create'])->name('createAkun');
 
 // Route untuk uri /account
 Route::get('/account', 
